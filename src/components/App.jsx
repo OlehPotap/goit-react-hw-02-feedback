@@ -1,6 +1,8 @@
 import React from 'react';
 import Statistics from './Statistics';
 import FeedbackOptions from './FeedbackOptions';
+import Notification from './Notification/Notification';
+import Section from './Section/Section';
 
 class App extends React.Component  {
 
@@ -26,27 +28,12 @@ class App extends React.Component  {
   render(){
     let totalFeedback = this.state.good + this.state.neutral + this.state.bad;
     return (
-      <div className="container" style={{
-        width: '600px',
-        marginRight: 'auto',
-        marginLeft: 'auto',
-        marginTop: '50px',
-        boxShadow: '0px 0px 6px 5px rgba(34, 60, 80, 0.2)',
-        borderRadius: '15px',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        paddingTop: '60px', 
-        paddingBottom: '60px',
-        backgroundColor: '#22A6F2',
-      }}>
-  
-  <div className="feedback">
+
+  <Section title="Please leave Feedback"> 
     <FeedbackOptions onGood={this.handleGood} onNeutral={this.handleNeutral} onBad={this.handleBad}/>
-    <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={totalFeedback} />
-  </div>
-  </div>
+    <h2 className="stats-box__heading">Statistics</h2>
+   {totalFeedback === 0 ? <Notification message="There is no feedback"/> : <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={totalFeedback} />} 
+   </Section>
     )
   }
 }
