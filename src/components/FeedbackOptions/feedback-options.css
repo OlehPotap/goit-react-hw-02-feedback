@@ -1,0 +1,27 @@
+.button-box__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+}
+
+.button-box__list-item {
+    margin-right: 10px;
+}
+
+.button-box__list-item:last-child {
+    margin-right: 0;
+}
+
+.button-box__button {
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+
+.button-box__button:hover {
+    box-shadow: 2px 2px 1px 2px rgba(34, 60, 80, 0.4);
+}
