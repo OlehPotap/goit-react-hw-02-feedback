@@ -6,10 +6,11 @@
     box-shadow: 0px 0px 6px 5px rgba(34, 60, 80, 0.2);
     border-radius: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    /* justify-content: center; */
+    /* align-items: center; */
     flex-direction: column;
     padding-top: 60px; 
     padding-bottom: 60px;
+    padding-left: 90px;
     background-color: #22A6F2;
 }

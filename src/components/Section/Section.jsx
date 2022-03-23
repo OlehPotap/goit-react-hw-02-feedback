@@ -1,8 +1,10 @@
+
 import './section.css'
 
-const Section = ({title}={}) => {
+const Section = ({title, children}={}) => {
     return (
-        <section className="section">{title}</section>
+        <section className="section">{title}
+        {children}</section>
     )
 }
 

@@ -29,11 +29,13 @@ class App extends React.Component  {
     let totalFeedback = this.state.good + this.state.neutral + this.state.bad;
     return (
 
+  <>
   <Section title="Please leave Feedback"> 
     <FeedbackOptions onGood={this.handleGood} onNeutral={this.handleNeutral} onBad={this.handleBad}/>
+ 
     <h2 className="stats-box__heading">Statistics</h2>
    {totalFeedback === 0 ? <Notification message="There is no feedback"/> : <Statistics good={this.state.good} neutral={this.state.neutral} bad={this.state.bad} total={totalFeedback} />} 
-   </Section>
+   </Section></>
     )
   }
 }
