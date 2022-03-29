@@ -1,9 +1,9 @@
 
-import './section.css'
+import styles from '../Section/section.module.css'
 
 const Section = ({title, children}={}) => {
     return (
-        <section className="section">{title}
+        <section className={styles.section}>{title}
         {children}</section>
     )
 }

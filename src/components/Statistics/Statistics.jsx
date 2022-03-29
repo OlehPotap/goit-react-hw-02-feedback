@@ -1,10 +1,10 @@
-import'./statistics.css'
+import s from'./statistics.module.css'
 
 const Statistics = ({good, neutral, bad, total}={}) => {
     let percentage = good / (good + neutral + bad) * 100;
     return (
         <div className="feedback__stats-box stats-box">
-    <ul className="stats-box__list">
+    <ul className={s.list}>
         <li className="stats-box__list-item">Good: {good}</li>
         <li className="stats-box__list-item">Nautral: {neutral}</li>
         <li className="stats-box__list-item">Bad: {bad}</li>
