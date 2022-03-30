@@ -1,4 +1,6 @@
 import s from'./statistics.module.css'
+import propTypes from 'prop-types';
+import { number } from 'prop-types';
 
 const Statistics = ({good, neutral, bad, total}={}) => {
     let percentage = good / (good + neutral + bad) * 100;
@@ -13,6 +15,13 @@ const Statistics = ({good, neutral, bad, total}={}) => {
       </ul>
     </div>
     )
+}
+
+Statistics.propTypes = {
+    good: number.isRequired,
+    neutral: number.isRequired,
+    bad: number.isRequired,
+    total: number
 }
 
 export default Statistics;
