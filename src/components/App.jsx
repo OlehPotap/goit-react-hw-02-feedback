@@ -20,8 +20,13 @@ class App extends React.Component {
     });
   };
 
+  totalFeedback = () => {
+    const {good, neutral, bad} = this.state;
+    return good + neutral + bad;
+  };
+
   render() {
-    let totalFeedback = this.state.good + this.state.neutral + this.state.bad;
+    
     return (
       <>
         <Section title="Please leave Feedback">
@@ -31,14 +36,14 @@ class App extends React.Component {
           />
 
           <h2 className="stats-box__heading">Statistics</h2>
-          {totalFeedback === 0 ? (
+          {this.totalFeedback() === 0 ? (
             <Notification message="There is no feedback" />
           ) : (
             <Statistics
               good={this.state.good}
               neutral={this.state.neutral}
               bad={this.state.bad}
-              total={totalFeedback}
+              total={this.totalFeedback()}
             />
           )}
         </Section>
